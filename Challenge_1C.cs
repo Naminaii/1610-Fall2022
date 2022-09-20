@@ -27,7 +27,7 @@ public class Program
       {
         Console.WriteLine(names[i]);
       }
-      foreach (string i in cars) 
+      foreach (string i in names) 
         {
           Console.WriteLine(i);
         }
