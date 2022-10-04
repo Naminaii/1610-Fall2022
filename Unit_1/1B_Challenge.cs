@@ -31,7 +31,7 @@ public class Adventure()
  
 Console.WriteLine("You walk into a tavern and are greeted by a strange man with a strange hat.");
 int Action1 = diceRoll;
-  switch(Action1)
+  switch (Action1)
   {
   case 1:
     Console.WriteLine("You offer him a single gold coin. He pulls out a deck of cards and reads your future. You don't really buy into all that tarrot stuff, but the thought is nice.");
