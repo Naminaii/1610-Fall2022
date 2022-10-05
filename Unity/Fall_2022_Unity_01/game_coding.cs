@@ -12,6 +12,16 @@ public class practice_coding : MonoBehaviour
         bool started = false; // stops the movement until we want it   
     }
     
+public class Guest : MonoBehaviour 
+{
+    public string Greeting;
+    
+    // Use this for initialization
+    void Start () 
+    {
+        Debug.Log("Welcome to Death's Bar," + myName + "Drink what you want. There's no point worrying about liver damage if you're already dead.");
+    }
+}
     public class ColorChangeReaction : MonoBehaviour
         {
             void Update()
