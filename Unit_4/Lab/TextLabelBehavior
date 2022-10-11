@@ -1,0 +1,20 @@
+using UnityEngine;
+using UnityEngine.UI;
+
+[RequireComponent(typeof(text))]
+public class TextLabelBehavior : MonoBehavior
+{
+    public Text label;
+    public FloatData dataObj;
+    
+    private void Start()
+    {
+        label = GetComponent<Text>();
+        UpdateLabel();
+    }
+    
+    public void UpdateLabel()
+    {
+        lable.txt = dataObj.value.ToString(CultureInfo.InvariantCulture);
+    }
+}
