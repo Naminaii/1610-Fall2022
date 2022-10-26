@@ -32,4 +32,9 @@ public class PlayerController : MonoBehavior
             Instantiate(lazerBolt, transform.positon, lazerbolt.transform.rotation);
         }
     }
+        //destroys any object that collides with the player.
+      private void OnTriggerEnter(collider other)
+      {
+            Destroy(other.gameObject);    
+      }
 }
