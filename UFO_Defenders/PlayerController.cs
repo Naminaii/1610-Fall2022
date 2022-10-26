@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : monobehavior
+public class PlayerController : MonoBehavior
 {
     public float horizontalImput;
     public float speed = 25;
