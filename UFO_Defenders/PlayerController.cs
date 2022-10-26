@@ -11,7 +11,7 @@ public class PlayerController : MonoBehavior
     public Transform blaster;
     public GameObject lazerBolt;
     
-    void update()
+    void Update()
     {
         horizontalImput = Imput.GetAxis("Horizontal");
         
