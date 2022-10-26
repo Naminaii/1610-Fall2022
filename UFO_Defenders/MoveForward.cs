@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveForward : MonoBehavior
 {
-  void Update
+  void Update()
   {
       transform.Translate(Vector3.forward*Time.deltaTime*speed);
       
