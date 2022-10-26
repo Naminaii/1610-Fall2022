@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerController : monobehavior
 {
     public float horizontalImput;
-    public float speed;
+    public float speed = 25;
+    public float xRange = 30;
     
-    public float xRange;
+    public Transform blaster;
+    public GameObject lazerBolt;
     
     void update()
     {
@@ -23,6 +25,11 @@ public class PlayerController : monobehavior
         if(transform.position.x > xRange)
         {
             transform.positon = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
+        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Instantiate(lazerBolt, transform.positon, lazerbolt.transform.rotation);
         }
     }
 }
