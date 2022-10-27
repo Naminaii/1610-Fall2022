@@ -5,6 +5,8 @@ using UnityEngine;
 public class Challenge_6 : MonoBehavior
 {
     public GameObject grabbyBoi;
+    public GameObject playerCharacter;
+    
     public float grabbySpeed;
     public float yRange;
     public float starbies;
@@ -20,7 +22,7 @@ public class Challenge_6 : MonoBehavior
  
     }
     
-    private void OnTriggerEnter(collider grabbyBoi)
+    private void OnTriggerEnter(playerCharacter grabbyBoi)
     {
        starbies =+ 1;
        
