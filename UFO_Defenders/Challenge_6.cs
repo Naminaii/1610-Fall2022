@@ -8,6 +8,7 @@ public class Challenge_6 : MonoBehavior
     public float grabbySpeed;
     public float yRange;
     public float starbies;
+    
     void Update()
     {
         transform.Translate(Vector3.down*Time.deltaTime*grabbySpeed);
