@@ -11,6 +11,10 @@ public class enemyManager : MonoBehavior
     private float startDelay = 2.5f;
     private float spawnInterval = 2f;
     
+    public float deltaTime;
+    public float speed;
+    public float bottomBounds = -10f;
+    
     void Start()
     {
         InvokeRepeating("SpawnRandomUFO", startDelay, spawnInterval);
@@ -21,6 +25,12 @@ public class enemyManager : MonoBehavior
         if(input.GetKeyDown(KeyCode.S))
         {
             SpawnRandomUFO();
+          int ufoMovement = transform.Translate(Vector3.downard*Time.deltaTime*speed);
+        }
+        if(ufoMovement < bottomBounds)
+        {
+            Destroy(gameObject);
+            Debug.Log("Game Over.");
         }
     }
     
