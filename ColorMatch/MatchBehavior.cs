@@ -11,8 +11,8 @@ public class MatchBehavior : MonoBehavior
        var tempObj = other.GetComponent<IDContainer>();
         if(tempObj != null) 
             return;
-           var otherID = tempObj.idObj; 
-            
+       
+       var otherID = tempObj.idObj;  
        if (otherID == idObj)
        {
            Debug.Log("Match");
