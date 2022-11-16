@@ -2,39 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehavior
+public class playerController : MonoBehaviour
 {
     public float horizontalImput;
     public float speed = 25;
     public float xRange = 30;
-    
+
     public Transform blaster;
     public GameObject lazerBolt;
+    public AudioSource playerAudio;
     
+    void Start()
+    {
+        playerAudio = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
-        horizontalImput = Imput.GetAxis("Horizontal");
-        
-        transform.Translate(Vector3.right*horizontalImput*Time.deltaTime);
-        
-        if(transform.position.x < -xRange)
+        horizontalImput = Input.GetAxis("Horizontal");
+
+        transform.Translate(Vector3.right * horizontalImput * Time.deltaTime);
+
+        if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
         }
-        
-        if(transform.position.x > xRange)
+
+        if (transform.position.x > xRange)
         {
-            transform.positon = new Vector3(xRange, transform.position.y, transform.position.z);
+            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
-        
-        if(Input.GetKeyDown(KeyCode.Space))
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(lazerBolt, transform.positon, lazerbolt.transform.rotation);
+            Instantiate(lazerBolt, transform.position, lazerBolt.transform.rotation);
+            playerAudio.PlayOneShot(pewPew, 1.0f);
         }
     }
-        //destroys any object that collides with the player.
-      private void OnTriggerEnter(collider other)
-      {
-            Destroy(other.gameObject);    
-      }
+    //destroys any object that collides with the player.
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(other.gameObject);
+    }
 }
