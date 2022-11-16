@@ -5,20 +5,9 @@ using UnityEngine;
 
 public class scoreKeep : MonoBehaviour
 {
-    public int Score; //score value
-    public TextMeshProUGUI scoreText; //displays the score
-
-    public void increaseScore(int ammount)
+    public int value;
+    
+    public void UpdateValue(int num)
     {
-        Score += ammount;
-        GetUpdateScoreText();
+        value += num;
     }
-
-    public void decreaseScore(int ammount)
-    {
-        Score -= ammount;
-        GetUpdateScoreText();
-    }
-
-    public object GetUpdateScoreText() => Debug.Log(scoreText + Score);
-}
