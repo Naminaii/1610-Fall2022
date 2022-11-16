@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class scoreKeep : MonoBehaviour
+[CreateAssetMenu]
+
+public class scoreKeep : ScriptableObject
 {
     public int value;
     
