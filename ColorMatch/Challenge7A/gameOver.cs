@@ -27,6 +27,7 @@ public class gameOver : MonoBehaviour
             GameOver.Invoke();
             updateLabel(0 obj);
             rendererObj.Color = originalColor;
+            Transform.position = Vector3.zero
             yield return new WaitForSeconds(0.5f);
             EndGame();
         }
