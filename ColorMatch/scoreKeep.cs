@@ -23,6 +23,18 @@ public class scoreKeep : ScriptableObject
         value += num;
     }
     
+    public void compareValue(scoreKeep obj)
+    {
+        if(value =< obj.value)
+        {
+            
+        }
+        else
+        {
+            value = obj.value;
+        }
+    }
+    
     private void onDisable()
     {
         Debug.Log("End");
