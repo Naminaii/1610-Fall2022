@@ -6,14 +6,14 @@ public class spriteBehavior : MonoBehaviour
 {
     private SpriteRenderer rendererObj;
     
-    private void Start()
+    private void Awake()
     {
         rendererObj = GetComponent<SpriteRenderer>();
     }
     
-    public void ChangeRendererColor(Color color)
+    public void ChangeRendererColor(colorID obj)
     {
-        rendererObj.color = color;
+        rendererObj.color = obj.value;
         
     }
 }
