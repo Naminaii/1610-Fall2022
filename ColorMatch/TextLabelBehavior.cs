@@ -1,7 +1,7 @@
-using.Systems;
-using.Systems.Collections;
-using.UnityEngine;
-using.UnityEvents;
+using Systems;
+using Systems.Collections;
+using UnityEngine;
+using UnityEvents;
 
 [RequireComponent(typeof(Text))]
 
