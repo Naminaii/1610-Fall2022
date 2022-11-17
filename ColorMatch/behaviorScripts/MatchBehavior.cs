@@ -6,13 +6,13 @@ using UnityEngine.Events;
 public class MatchBehavior : MonoBehavior
 {
     public ID idObj;
-    public UnityEvent matchEvent, noMatchEvent;
+    public UnityEvent matchEvent, noMatchEvent, noMatchDelay;
     
     private IEnumerator OnTriggerEnter(collider other)
     {
        var tempObj = other.GetComponent<IDContainer>();
         if(tempObj != null) 
-            return;
+            yield break;
        
        var otherID = tempObj.idObj;  
        if (otherID == idObj)
@@ -22,6 +22,8 @@ public class MatchBehavior : MonoBehavior
         else
             {
                 noMatchEvent.Invoke();
+                yield return new WaitForSeconds(0.5f);
+                noMatchDelay.Invoke();
             }
     }
 }
