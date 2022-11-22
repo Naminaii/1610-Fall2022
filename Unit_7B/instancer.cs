@@ -17,4 +17,12 @@ public class instancer : ScriptableObject
     {
         Instantiate(prefab, obj.value, Quanternion.identity);
     }
+    
+    public void createInstance(Vector3DataList obj)
+    {
+       for(var i = 0; i < Vector#DataList.Count; i++)
+       {
+       Instantiate(prefab, obj.Vector3DataList[i].value, Quanternion.identity);
+       }
+    }
 }
