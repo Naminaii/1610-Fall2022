@@ -13,7 +13,7 @@ public class instancer : ScriptableObject
         Instantiate(prefab);
     }
     
-    public void createInstance(vector3Data obj)
+    public void createInstanceFromList(vector3Data obj)
     {
         Instantiate(prefab, obj.value, Quanternion.identity);
     }
