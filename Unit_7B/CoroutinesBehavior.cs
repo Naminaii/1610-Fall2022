@@ -18,13 +18,13 @@ public class CoroutinesBehavior : MonoBehaviour
     
     public void StartCounting()
     {
-        StartCoroutine(Counting());
+        wfsObj = new WaitForSeconds(seconds);
+        wffuObj = new WaitForFixedUpdate();
+        startEvent.Invoke();
     }
     
     private IEnumerator Counting()
     {
-        wfsObj = new WaitForSeconds(seconds);
-        wffuObj = new WaitForFixedUpdate();
         startCountEvent.Invoke();
         yield return wfsObj;
         
