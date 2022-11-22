@@ -37,4 +37,12 @@ public class instancer : ScriptableObject
             numb = 0;
        }
     }
+    
+     public void createInstanceRandomly(Vector3DataList obj)
+    {
+       numb = Random.Range(0,obj.Vector3DataList.Count-1);
+       Instantiate(prefab, obj.Vector3DataList[i].numb.value, Quanternion.identity);
+       numb++;
+       
+    }
 }
