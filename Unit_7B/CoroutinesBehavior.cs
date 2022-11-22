@@ -1,31 +1,55 @@
-using System.Collections;
+using UnityEngine.Events;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CoroutinesBehavior : MonoBehaviour
 {
-    public bool canRun = true;
+    public bool canRun = false;
+    public int counterNum = 3;
     public float seconds = 3.0f;
     private WaitForSeconds wfsObj;
     private WaitForFixedUpdate wffuObj;
+    public UnityEvent startCountEvent, repeatCountEvent, endCountEvent, repeatUntilFalse, startEvent;
     
-    IEnumerator Start()
+    public void Start()
     {
-        wfsObj = new WaitForSeconds(seconds);
-        wffuObj = new WaitForFIxedUpdate();
-        Debug.Log("Start");
-        yeild return new wfsObj;
-        Debug.Log("Late Start");
-        
-        while(canRun)
-        {
-            yield return wfsObj;
-            Debug.Log("Run on start");
-        }
+       startEvent.Invoke();
     }
     
-    void Update()
+    public void StartCounting()
     {
-        Debug.Log("Run");
+        StartCoroutine(Counting());
+    }
+    
+    private IEnumerator Counting()
+    {
+        wfsObj = new WaitForSeconds(seconds);
+        wffuObj = new WaitForFixedUpdate();
+        startCountEvent.Invoke();
+        yield return wfsObj;
+        
+        while (counterNum.value > 0)
+        {
+            repeatCountEvent.Invoke();
+            counterNum.value--;
+            yield return wfsObj;
+        }
+        
+        endCountEvent.Invoke();
+    }
+    
+    public void startRepeatTillFalse()
+    {
+        canRun = true;
+        StartCouroutine(RepeatUntilFalse());
+    }
+    
+    private IEnumerator RepeatUntilFalse()
+    {
+        while (canRun = true)
+        {
+            yield return wfsObj;
+            repeatUntilFalse.Invoke();
+        }
     }
 }
