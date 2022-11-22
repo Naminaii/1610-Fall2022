@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ColorIDBehavior : ID
 {
-    public ColorIDDataList;
+    public ColorIDDataList colorIDDataListObj;
     
     private void Awake()
     {
