@@ -6,8 +6,15 @@ using UnityEngine;
 
 public class instancer : ScriptableObject
 {
-    public void createInstance(GameObject obj)
+    public GameObject prefab;
+    
+    public void createInstance()
     {
-        Instantiate(obj);
+        Instantiate(prefab);
+    }
+    
+    public void createInstance(vector3Data obj)
+    {
+        Instantiate(prefab, obj.value, Quanternion.identity);
     }
 }
