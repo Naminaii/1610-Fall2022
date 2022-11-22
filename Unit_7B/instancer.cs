@@ -7,6 +7,7 @@ using UnityEngine;
 public class instancer : ScriptableObject
 {
     public GameObject prefab;
+    private int numb = 0;
     
     public void createInstance()
     {
@@ -18,11 +19,18 @@ public class instancer : ScriptableObject
         Instantiate(prefab, obj.value, Quanternion.identity);
     }
     
-    public void createInstance(Vector3DataList obj)
+    public void createInstanceCounting(Vector3DataList obj)
     {
-       for(var i = 0; i < Vector#DataList.Count; i++)
+       foreach(var i = 0; i < Vector#DataList.Count; i++)
        {
        Instantiate(prefab, obj.Vector3DataList[i].value, Quanternion.identity);
        }
+    }
+    
+    public void createInstanceCounting(Vector3DataList obj)
+    {
+       numb = obj.Vector3DataList.Count;
+       numb--;
+       Instantiate(prefab, obj.Vector3DataList[i].numb.value, Quanternion.identity);
     }
 }
