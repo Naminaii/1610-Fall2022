@@ -29,8 +29,12 @@ public class instancer : ScriptableObject
     
     public void createInstanceCounting(Vector3DataList obj)
     {
-       numb = obj.Vector3DataList.Count;
-       numb--;
        Instantiate(prefab, obj.Vector3DataList[i].numb.value, Quanternion.identity);
+       numb++;
+       
+       if(numb == obj.Vector3DataList.Count)
+       {
+            numb = 0;
+       }
     }
 }
