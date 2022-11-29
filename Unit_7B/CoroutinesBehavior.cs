@@ -11,7 +11,12 @@ public class CoroutinesBehavior : MonoBehaviour
     private WaitForFixedUpdate wffuObj;
     public UnityEvent startCountEvent, repeatCountEvent, endCountEvent, repeatUntilFalse, startEvent;
     
-    public void Start()
+   public bool CanRun
+   {
+        get => canRun;
+        set canRun = value;
+   }
+   public void Start()
     {
        startEvent.Invoke();
     }
