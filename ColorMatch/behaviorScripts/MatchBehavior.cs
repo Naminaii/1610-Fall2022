@@ -23,6 +23,8 @@ public class MatchBehavior : MonoBehavior
             {
                 noMatchEvent.Invoke();
                 yield return new WaitForSeconds(0.5f);
+                Destroy(gameObject);
+                Destroy(other.gameObject);
                 noMatchDelay.Invoke();
             }
     }
